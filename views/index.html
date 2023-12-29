@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Implementing ML Models</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+    }
+
+    main {
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    input {
+      margin-bottom: 20px;
+    }
+
+    div {
+      margin-bottom: 15px;
+    }
+
+    #buttons {
+      margin-top: 20px;
+    }
+
+    button {
+      margin-right: 10px;
+    }
+  </style>
+</head>
+<body>
+  <main>
+        
+    <!-- Firs Selection -->
+    <div id="firstSelection">
+
+      <label for="modelDropdown">Select a model:</label>
+      <select id="modelDropdown"></select>
+      <br>
+      <br>
+      <label for="fileInput">Choose a JSON file to evaluate:</label>
+      <input type="file" id="fileInput" accept=".json" />
+      <br>
+
+    </div>
+    
+    <!-- Results -->
+    <div id="results">
+
+      <div id="jsonUser"></div>
+      <div id="jsonContent"></div>
+      <div id="modelName"></div>
+      <div id="modelResponse"></div>
+
+    </div>
+    
+    <!-- Buttons -->
+    <div id="buttons">
+      <!-- Save Results Button -->
+      <button id="saveResultsButton" onclick="saveResults()">Save Results</button>
+      
+      <!-- Load Another File Button -->
+      <button id="loadAnotherFileButton" onclick="loadAnotherFile()">Load Another File</button>
+    </div>
+  </main>
+
+  <script src="/script/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,52 @@
+[
+    {
+      "name": "Toxic-bert",
+      "url": "https://api-inference.huggingface.co/models/unitary/toxic-bert",
+      "apiToken": "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"
+    },
+    {
+      "name": "twitter-roberta-base-sentiment",
+      "url": "https://api-inference.huggingface.co/models/cardiffnlp/twitter-roberta-base-sentiment",
+      "apiToken": "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"
+    },
+    {
+      "name": "finbert-tone",
+      "url": "https://api-inference.huggingface.co/models/yiyanghkust/finbert-tone",
+      "apiToken": "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"
+    },
+    {
+      "name": "finbert",
+      "url": "https://api-inference.huggingface.co/models/ProsusAI/finbert"
+      ,"apiToken": "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"
+    },
+    {
+      "name": "twitter-roberta-base-sentiment-latest",
+      "url": "https://api-inference.huggingface.co/models/cardiffnlp/twitter-roberta-base-sentiment-latest",
+      "apiToken": "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"
+    },
+    {
+      "name": "distilbert-base-uncased-emotion",
+      "url": "https://api-inference.huggingface.co/models/bhadresh-savani/distilbert-base-uncased-emotion",
+      "apiToken": "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"
+    },
+    {
+      "name": "bert-base-uncased-emotion",
+      "url": "https://api-inference.huggingface.co/models/bhadresh-savani/bert-base-uncased-emotion",
+      "apiToken": "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"
+    },
+    {
+      "name": "emotion-english-distilroberta-base",
+      "url": "https://api-inference.huggingface.co/models/j-hartmann/emotion-english-distilroberta-base",
+      "apiToken": "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"
+    },
+    {
+      "name": "distilbert-base-uncased-empathetic-dialogues-context",
+      "url": "https://api-inference.huggingface.co/models/bdotloh/distilbert-base-uncased-empathetic-dialogues-context",
+      "apiToken": "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"
+    },
+    {
+      "name": "roberta-base-go_emotions",
+      "url": "https://api-inference.huggingface.co/models/SamLowe/roberta-base-go_emotions",
+      "apiToken": "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"
+    }
+]
