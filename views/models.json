@@ -1,10 +1,5 @@
 [
     {
-      "name": "Toxic-bert",
-      "url": "https://api-inference.huggingface.co/models/unitary/toxic-bert",
-      "apiToken": "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"
-    },
-    {
       "name": "twitter-roberta-base-sentiment",
       "url": "https://api-inference.huggingface.co/models/cardiffnlp/twitter-roberta-base-sentiment",
       "apiToken": "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"
@@ -47,6 +42,51 @@
     {
       "name": "roberta-base-go_emotions",
       "url": "https://api-inference.huggingface.co/models/SamLowe/roberta-base-go_emotions",
+      "apiToken": "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"
+    },
+    {
+      "name": "roberta-hate-speech-dynabench-r4-target",
+      "url": "https://api-inference.huggingface.co/models/facebook/roberta-hate-speech-dynabench-r4-target",
+      "apiToken": "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"
+    },
+    {
+      "name": "roberta-base-bne-finetuned-hate-speech-offensive-spanish",
+      "url": "https://api-inference.huggingface.co/models/JonatanGk/roberta-base-bne-finetuned-hate-speech-offensive-spanish",
+      "apiToken": "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"
+    },
+    {
+      "name": "distilbert-base-uncased-finetuned-sst-2-english",
+      "url": "https://api-inference.huggingface.co/models/distilbert-base-uncased-finetuned-sst-2-english",
+      "apiToken": "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"
+    },
+    {
+      "name": "bert-base-uncased-hatexplain-rationale-two",
+      "url": "https://api-inference.huggingface.co/models/Hate-speech-CNERG/bert-base-uncased-hatexplain-rationale-two",
+      "apiToken": "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"
+    },
+    {
+      "name": "dehatebert-mono-english",
+      "url": "https://api-inference.huggingface.co/models/Hate-speech-CNERG/dehatebert-mono-english",
+      "apiToken": "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"
+    },
+    {
+      "name": "toxic-comment-model",
+      "url": "https://api-inference.huggingface.co/models/martin-ha/toxic-comment-model",
+      "apiToken": "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"
+    },
+    {
+      "name": "hate_speech_en",
+      "url": "https://api-inference.huggingface.co/models/IMSyPP/hate_speech_en",
+      "apiToken": "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"
+    },
+    {
+      "name": "bert-base-uncased-hatexplain",
+      "url": "https://api-inference.huggingface.co/models/Hate-speech-CNERG/bert-base-uncased-hatexplain",
+      "apiToken": "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"
+    },
+    {
+      "name": "toxic-bert",
+      "url": "https://api-inference.huggingface.co/models/unitary/toxic-bert",
       "apiToken": "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"
     }
 ]
