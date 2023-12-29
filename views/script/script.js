@@ -71,7 +71,7 @@ function displayJsonContent(content) {
   const jsonContentDiv = document.getElementById('jsonContent');
   const firstSelectionDiv = document.getElementById('firstSelection');
 
-  const userValue = content.user || 'User value not found';
+  const userValue = content.user || 'User not found';
   const textValue = content.text || 'Text not found';
 
   userDiv.innerHTML = `<strong>User:</strong> ${userValue}`;
