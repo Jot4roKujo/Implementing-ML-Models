@@ -3,6 +3,7 @@ let API_TOKEN = '';
 let MODEL_URL = ''; 
 let MODEL_NAME = '';
 let API_RESPONSE = undefined;
+let userEnteredText = '';
 let models;
 
 // Fetch the models data from the JSON file or database
@@ -149,6 +150,36 @@ document.getElementById('fileInput').addEventListener('change', async (event) =>
     }
   }
 });
+
+//Evaluate Button
+function textInput() {
+  //Get text
+  const textInput = document.getElementById('textInput');
+  userEnteredText = textInput.value.trim();
+
+  const modelDiv = document.getElementById('modelName');
+  const jsonContentDiv = document.getElementById('jsonContent');
+  const firstSelectionDiv = document.getElementById('firstSelection');
+  const queryResponseDiv = document.getElementById('modelResponse');
+
+  //Populate Model Name
+  const modelValue = MODEL_NAME || 'None';
+  modelDiv.innerHTML = `<strong>Model Selected:</strong> ${modelValue}`;
+
+  //Populate Text to Evaluate
+  jsonContentDiv.innerHTML = `<strong>Text to Evaluate:</strong> ${userEnteredText}`;
+
+  //Show Response
+  query(userEnteredText).then((API_RESPONSE) => {
+    queryResponseDiv.innerHTML = `<strong>Response:</strong> ` + formatObject(API_RESPONSE);
+  });
+  
+  // Hide the firstSelection div after the button is pressed
+  firstSelectionDiv.style.display = 'none';
+  
+  // Show buttons
+  document.getElementById('buttons').style.display = 'block';
+}
 
 //Save button
 function saveResults() {
