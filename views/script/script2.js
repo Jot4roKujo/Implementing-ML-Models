@@ -1,20 +1,15 @@
-// Initialize with an empty string
+//Initialize all variables with an empty string
 let API_TOKEN = '';
 let MODEL_URL = ''; 
 let MODEL_NAME = '';
 let API_RESPONSE = undefined;
+let models;
 
 // Fetch the models data from the JSON file or database
 fetch('/models.json') // The models file must be in the root directory
   .then(response => response.json())
-  .then(models => {
-    // Assuming you only want the first model for demonstration purposes
-    const selectedModel = models[0];
-
-    // Set API_TOKEN, MODEL_URL, and MODEL_NAME based on the selected model
-    API_TOKEN = selectedModel.apiToken;
-    MODEL_URL = selectedModel.url;
-    MODEL_NAME = extractModelName(MODEL_URL);
+  .then(modelsData => {
+    models = modelsData;
 
     // Populate the dropdown menu with models, including an empty placeholder
     const modelDropdown = document.getElementById('modelDropdown');
@@ -36,10 +31,27 @@ fetch('/models.json') // The models file must be in the root directory
 
 // Update MODEL_URL and MODEL_NAME based on the selected model from the dropdown
 document.getElementById('modelDropdown').addEventListener('change', function () {
-  MODEL_URL = this.value;
-  MODEL_NAME = extractModelName(MODEL_URL);
+  const selectedIndex = this.selectedIndex;
+
+  if (selectedIndex !== undefined) {
+    if (selectedIndex > 0 && models) {
+      
+      const selectedModel = models[selectedIndex - 1];
+      
+      // Set API_TOKEN, MODEL_URL, and MODEL_NAME based on the selected model
+      API_TOKEN = selectedModel.apiToken;
+      MODEL_URL = selectedModel.url;
+      MODEL_NAME = extractModelName(MODEL_URL);
+    } else {
+      // No model selected, reset values      
+      API_TOKEN = '';
+      MODEL_URL = '';
+      MODEL_NAME = '';
+    }
+  }
 });
 
+//Extract Model Name
 function extractModelName(url) {
   const startIndex = url.indexOf('models') + 'models'.length + 1;
   if (startIndex !== -1) {
@@ -73,7 +85,7 @@ function displayJsonContent(content) {
   jsonContentDiv.innerHTML = `<strong>Text to Evaluate:</strong>`;
   const firstSelectionDiv = document.getElementById('firstSelection');
 
-  const modelValue = MODEL_NAME || 'Model name not found';
+  const modelValue = MODEL_NAME || 'None';
   modelDiv.innerHTML = `<strong>Model Selected:</strong> ${modelValue}`;
 
   content.forEach(item => {
@@ -82,11 +94,10 @@ function displayJsonContent(content) {
       const textElement = document.createElement('p');
       const userElement = document.createElement('p');
       const responseElement = document.createElement('p');
+      const stringText = JSON.stringify(item.text, null, 2);
 
       textElement.innerHTML = `<strong>Text:</strong> ${item.text}`;
       userElement.innerHTML = `<strong>User:</strong> ${item.user || 'Unknown User'}`;
-
-      const stringText = JSON.stringify(item.text, null, 2);
 
       query(stringText).then((API_RESPONSE) => {
         responseElement.innerHTML = `<strong>Response:</strong> ` + formatObject(API_RESPONSE);
@@ -139,6 +150,7 @@ document.getElementById('fileInput').addEventListener('change', async (event) =>
   }
 });
 
+//Save button
 function saveResults() {
   // Get values from the displayed content
   const userValue = document.getElementById('jsonUser').textContent.replace('User:', '').trim();
@@ -172,10 +184,10 @@ function saveResults() {
   document.body.removeChild(a);
 }
 
-// Function to reload the page
+//Reload buttone
 function loadAnotherFile() {
   location.reload();
 }
 
-// Hide the buttons when loading another file
+// Hide "save" and "reload" buttons on page loading
 document.getElementById('buttons').style.display = 'none';
