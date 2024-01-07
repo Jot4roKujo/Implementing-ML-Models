@@ -182,7 +182,7 @@ function textInput() {
 }
 
 //Save button
-function saveResults() {
+/*function saveResults() {
   // Get values from the displayed content
   const userValue = document.getElementById('jsonUser').textContent.replace('User:', '').trim();
   const textValue = document.getElementById('jsonContent').textContent.replace('Text to Evaluate:', '').trim();
@@ -213,7 +213,7 @@ function saveResults() {
 
   // Remove the link from the body
   document.body.removeChild(a);
-}
+}*/
 
 //Reload buttone
 function loadAnotherFile() {
