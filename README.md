@@ -1,3 +1,7 @@
+# Implementing ML Models for discrimatory speech recognition
+
+This project aims to recognize discriminatory speech into a given text file.
+
 ## Run Locally
 
 Clone the project
